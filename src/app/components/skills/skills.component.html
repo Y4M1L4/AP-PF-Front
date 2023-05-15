@@ -1,18 +1,30 @@
 <div class="card">
   <div class="card-body">
     <h5 class="card-title">Hard Skills & Soft Skills</h5>
+    <button type="button" class="btn btn-dark" *ngIf="isLogged" data-bs-toggle="modal"
+      data-bs-target="#addSkillModal">
+      Nueva Skill
+    </button>
 
-    <h6>Resolucion de problemas</h6>
-    <div class="progress" role="progressbar" aria-label="Success striped example" aria-valuenow="25" aria-valuemin="0"
-      aria-valuemax="100">
-      <div class="progress-bar progress-bar-striped bg-success" style="width: 75%"></div>
+    <div *ngFor="let skill of skills">
+      <div class="card-body item-skill">
+        <h6>{{skill.nombre}}</h6>
+        <div class="progress" role="progressbar" aria-label="Success striped example" aria-valuenow="25"
+          aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar progress-bar-striped bg-success" [ngStyle]="{'width': skill.porcentaje + '%'}"></div>
+        </div>
+
+        <div class="button-container" *ngIf="isLogged">
+          <button type="button" class="btn btn-dark" routerLink="/skill/edit/{{skill.id}}">
+            <i class="bi bi-pencil-fill"></i></button>
+          <button type="button" class="btn btn-danger" (click)="onDelete(skill.id)"><i
+              class="bi bi-trash-fill"></i></button>
+        </div>
+      </div>
     </div>
 
-    <h6>Diseño de sistemas</h6>
-    <div class="progress" role="progressbar" aria-label="Success striped example" aria-valuenow="25" aria-valuemin="0"
-      aria-valuemax="100">
-      <div class="progress-bar progress-bar-striped bg-success" style="width: 35%"></div>
-    </div>
   </div>
 </div>
 
+
+<app-new-skill></app-new-skill>

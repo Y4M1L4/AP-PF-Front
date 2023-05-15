@@ -1,33 +1,15 @@
-<div class="modal fade" id="editExperienceModal" tabindex="-1" aria-labelledby="editModal" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5">Editar experiencia</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-
-      </div>
-    </div>
-  </div>
-</div>
-
 <div class="container">
   <div class="row">
     <div>
       <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
 
         <div class="form-group">
-          <label for="nombre">Nombre de la empresa</label>
+          <label for="nombre">Nombre de la Institucion</label>
           <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="educacion.nombre" required>
         </div>
 
         <div class="form-group">
-          <label for="descripcion">Descripcion del empleo</label>
+          <label for="descripcion">Descripcion del estudio</label>
           <input type="text" class="form-control" id="descripcion" name="descripcion"
             [(ngModel)]="educacion.descripcion" required>
         </div>
@@ -35,15 +17,16 @@
 
 
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="esTrabajoActual" name="esTrabajoActual"
+          <input class="form-check-input" type="checkbox" value="" id="esTrabajoActual" name="esActual"
             [(ngModel)]="educacion.esActual" checked>
           <label class="form-check-label" for="esTrabajoActual">
-            Empleo actual
+            Estudio actual
           </label>
         </div>
 
         <button type="submit" class="btn btn-primary">Actualizar</button>
       </form>
+
     </div>
   </div>
 </div>

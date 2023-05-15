@@ -2,6 +2,18 @@
   margin: 15px;
 }
 
-.item-proyecto .card-title a {
-  text-decoration: none;
+.item-skill {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.progress {
+  width: 100%;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
