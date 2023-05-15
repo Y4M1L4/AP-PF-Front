@@ -1,0 +1,52 @@
+<div class="modal fade" id="addExperienceModal" tabindex="-1" aria-labelledby="addExperienceModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">Nueva experiencia</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div>
+              <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+
+                <div class="form-group">
+                  <label for="nombre">Nombre de la empresa</label>
+                  <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="nombre" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="descripcion">Descripcion del empleo</label>
+                  <input type="text" class="form-control" id="descripcion" name="descripcion" [(ngModel)]="descripcion"
+                    required>
+                </div>
+
+                <div class="form-group">
+                  <label for="tipoEmpleo">Tipo Empleo</label>
+                  <select class="form-select" id="tipoEmpleo" name="tipoEmpleo" [(ngModel)]="tipoEmpleo" required>
+                    <option value="FullTime">FullTime</option>
+                    <option value="PartTime">PartTime</option>
+                    <option value="Freelance">Freelance</option>
+                  </select>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="esTrabajoActual" name="esTrabajoActual"
+                    [(ngModel)]="esTrabajoActual" checked>
+                  <label class="form-check-label" for="esTrabajoActual">
+                    Empleo actual
+                  </label>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" (click)="onCreate()">Agregar experiencia</button>
+      </div>
+    </div>
+  </div>
+</div>

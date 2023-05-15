@@ -1,0 +1,32 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Experiencia Laboral</h5>
+    <div>
+      <button type="button" class="btn btn-dark" *ngIf="isLogged" data-bs-toggle="modal"
+        data-bs-target="#addExperienceModal">
+        Nueva experiencia
+      </button>
+    </div>
+
+    <div *ngFor="let exp of experiencias" class="card-body item-trabajo">
+      <!-- <img src="../assets/icono.png" class="img-trabajo" alt=""> -->
+      <div class="container">
+        <h5 class="card-title">{{exp.nombre}}</h5>
+        <p class="card-text m-0"><small class="text-body-secondary">{{exp.tipoEmpleo}}</small></p>
+        <p class="card-text"><small class="text-body-secondary">
+            tiempo de empleo:
+            <span *ngIf="exp.esTrabajoActual">Actualidad</span></small></p>
+        <p class="card-text">{{exp.descripcion}}</p>
+      </div>
+      <div class="button-container" *ngIf="isLogged">
+        <button type="button" class="btn btn-dark mb-1" routerLink="/experiencia/edit/{{exp.id}}">
+          <i class="bi bi-pencil-fill"></i></button>
+        <button type="button" class="btn btn-danger mt-1" (click)="onDelete(exp.id)"><i
+            class="bi bi-trash-fill"></i></button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<app-new-experience></app-new-experience>

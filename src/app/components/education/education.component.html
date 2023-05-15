@@ -1,0 +1,31 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Educacion</h5>
+    <div>
+      <button type="button" class="btn btn-dark" *ngIf="isLogged" data-bs-toggle="modal"
+        data-bs-target="#addEducationModal">
+        Nueva educacion
+      </button>
+    </div>
+
+    <div *ngFor="let edu of educacion" class="card-body item-trabajo">
+      <!-- <img src="../assets/icono.png" class="img-trabajo" alt=""> -->
+      <div class="container">
+        <h5 class="card-title">{{edu.nombre}}</h5>
+        <p class="card-text"><small class="text-body-secondary">
+            tiempo:
+            <span *ngIf="edu.esActual">Actualidad</span></small></p>
+        <p class="card-text">{{edu.descripcion}}</p>
+      </div>
+      <div class="button-container" *ngIf="isLogged">
+        <button type="button" class="btn btn-dark mb-1" routerLink="/educacion/edit/{{edu.id}}">
+          <i class="bi bi-pencil-fill"></i></button>
+        <button type="button" class="btn btn-danger mt-1" (click)="onDelete(edu.id)"><i
+            class="bi bi-trash-fill"></i></button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<app-new-education></app-new-education>

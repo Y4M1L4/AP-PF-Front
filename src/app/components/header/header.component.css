@@ -1,0 +1,48 @@
+.navbar-brand {
+  font-size: 1.5em;
+  color: white;
+}
+
+.navbar-logoAP {
+  width: 150px;
+}
+
+.navbar-container-left {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 10px;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.navbar-container-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 10px;
+  align-items: center;
+  width: 20%;
+  margin-right: 10px;
+}
+.bi {
+  color: white;
+}
+.card {
+  margin: 15px;
+}
+.img-banner {
+  height: 300px;
+}
+
+.img-profile {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  position: absolute;
+  top: 40%;
+}
+
+.title {
+  margin-top: 45px;
+}

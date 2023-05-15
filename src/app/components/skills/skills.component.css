@@ -1,0 +1,7 @@
+.card {
+  margin: 15px;
+}
+
+.item-proyecto .card-title a {
+  text-decoration: none;
+}
